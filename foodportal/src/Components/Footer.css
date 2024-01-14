@@ -1,0 +1,15 @@
+.footer-main{
+    width: 100vw;
+    height: 8vh;
+    background: rgb(57, 57, 57);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.Fb,.Yt,.Li,.Tw,.Ig{
+    color: white;
+    font-size: 100px;
+    padding: 0px 50px 0px 50px;
+    cursor: pointer;
+}
