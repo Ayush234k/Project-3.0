@@ -1,12 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .login-main{
     width: 100vw;
-    height: 90vh;
+    height: 92vh;
     display: flex;
     flex-direction: column;
 }
 .login-credentials{
     width: 100%;
-    height: 90%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,61 +19,74 @@
 }
 .login-input{
     width: 40%;
-    height: 70%;
-    background: rgba(234, 234, 234, 0.7);
-    margin-left: 7em ;
+    height: 85%;
+    background: rgba(255, 255, 255, 0.7);
+    margin-left: 5em ;
     border-radius: 20px;
     display: flex;
+    padding: 40px 0px 60px 0px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    box-shadow: 10px 10px 5px rgb(173, 200, 230);
+}
+.login-input-2{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0px 0px 60px;
+}
+.login-input-2 label{
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 .login-input h1{
-    color: rgb(74, 74, 74);
+    color: rgb(0, 0, 26);
     padding-bottom: 20px;
-    font-size: 40px;
+    font-size: 50px;
 }
-.login-input input{
-    width: 65%;
-    height: 12%;
+.login-input-2 input{
+    width: 90%;
+    height: 20%;
     border-radius: 10px;
-    border: none;
+    border: 1px solid rgb(173, 200, 230);
     padding: 0px 30px 0px 30px;
     margin-bottom: 30px;
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(255, 255, 255);
     color: white;
+}
+.login-input-2 input:hover{
+    border-color: #3F00FF;
 }
 ::placeholder{
     color: rgb(66, 66, 66);
     font-size: 19px;
 }
+.login-input p{
+    margin-top: 30px;
+}
 button{
-    width: 25%;
-    height: 2.6rem;
+    width: 40%;
+    height: 3.5rem;
     border-radius: 10px;
     border: none;
-    margin-top: 10px;
-    font-size: 20px;
-    background-color: rgb(66, 66, 251);
+    /* margin-bottom: 70px; */
+    font-size: 18px;
+    background-color: #3F00FF;
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
 .login-image{
-    width: 40%;
-    height: 70%;
-    margin-right: 3em ;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-image: url(../../assets/log1.jpg);
+    background-size: cover;
+    
 }
 .login-image img{
-    width: 80%;
+    width: 100%;
     height: 100%;
 }
-footer{
-    width: 100%;
-    height: 10%;
-    background: rgb(47, 47, 47);
-}
+

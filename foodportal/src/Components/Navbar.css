@@ -4,19 +4,19 @@
 }
 
 .navbar {
-    height: 10vh;
+    height: 8vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(25, 25, 25);
     padding: 1rem;
     color: #fff;
   }
   
   .navbar-brand {
-    font-size: 40px;
-    color: transparent;
-    -webkit-text-stroke: 1px rgb(181, 181, 181);
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    /* -webkit-text-stroke: 1px rgb(181, 181, 181); */
     font-weight: bold;
     font-family: "Custom";
   }
@@ -53,7 +53,7 @@
     transition: width 0.3s linear;
   }
   .navbar-links a:hover{
-    color: white;
+    color: rgb(188, 214, 244);
   }
 
   @media (max-width: 768px) {

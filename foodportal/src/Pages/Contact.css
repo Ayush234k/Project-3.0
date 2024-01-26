@@ -55,6 +55,7 @@
 .Fb2,.Li2,.Tw2,.Ig2{
   color: #ffffff;
   font-size: 100px;
+  cursor: pointer;
 }
 .contact-token {
   width: 100%;
@@ -79,7 +80,6 @@
   justify-content: center; */
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 20px;
   color: #333;
   margin-left: 80px;
 }
