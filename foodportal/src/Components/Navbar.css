@@ -1,15 +1,24 @@
+@font-face{
+  font-family: "Custom";
+  src : url(../assets/fonts/Azonix.otf);
+}
+
 .navbar {
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(47, 47, 47);
+    background-color: rgb(17, 17, 17);
     padding: 1rem;
     color: #fff;
   }
   
   .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 40px;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(181, 181, 181);
     font-weight: bold;
+    font-family: "Custom";
   }
   
   .navbar-toggle {
@@ -19,15 +28,34 @@
   }
   
   .navbar-links {
+    font-size: 1.2rem;
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    padding-right: 30px;
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: 1px;
   }
-  
-  .navbar-links a {
+
+  .navbar-links a{
+    color: rgb(181, 181, 181);
     text-decoration: none;
-    color: #fff;
   }
-  
+
+  .navbar-links a::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    display: block;
+  }
+  .navbar-links a:hover::after{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s linear;
+  }
+  .navbar-links a:hover{
+    color: white;
+  }
+
   @media (max-width: 768px) {
     .navbar-links {
       display: none;

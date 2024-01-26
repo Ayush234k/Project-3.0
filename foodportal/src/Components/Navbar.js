@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import './Navbar.css';
 
@@ -10,15 +11,14 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isNavOpen ? 'open' : ''}`}>
-      <div className="navbar-brand">Your Logo</div>
+      <div className="navbar-brand">KIIT UNIVERSITY</div>
       <div className="navbar-toggle" onClick={toggleNav}>
         ☰
       </div>
       <div className="navbar-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
       </div>
     </nav>
   );

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import img1 from './Images/Chef.png';
+import Footer from '../../Components/Footer'
+import img1 from '../../assets/Chef.png'
 
 function Login(){
 const [email, setEmail] = useState()
@@ -19,7 +18,6 @@ const handleSubmit = (e) =>{
 
     return(
         <div  className='login-main'>
-              <Navbar />
               <div className='login-credentials'>
               <div className='login-input'>
                 <h1>Login</h1>

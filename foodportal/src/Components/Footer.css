@@ -1,7 +1,7 @@
 .footer-main{
     width: 100vw;
-    height: 8vh;
-    background: rgb(57, 57, 57);
+    height: 10vh;
+    background: rgb(17, 17, 17);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,7 +9,7 @@
 }
 .Fb,.Yt,.Li,.Tw,.Ig{
     color: white;
-    font-size: 100px;
-    padding: 0px 50px 0px 50px;
+    /* font-size: 100px;
+    padding: 0px 50px 0px 50px; */
     cursor: pointer;
 }
