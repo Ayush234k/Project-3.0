@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from './Pages/Login/Login'
 import AboutUs from './Pages/About';
 import Contact from './Pages/Contact';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/" element={ <Login/> }/>
                 <Route path="/about" element={ <AboutUs/> }/>
                 <Route path="/contact" element={ <Contact/> }/>
+                <Route path="*" element={<NotFound />} />
             </Routes>
     </> 
   );

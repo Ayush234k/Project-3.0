@@ -20,15 +20,16 @@
 .login-input{
     width: 40%;
     height: 85%;
-    background: rgba(255, 255, 255, 0.7);
+    color: white;
+    background: rgba(54, 52, 52, 0.4);
     margin-left: 5em ;
     border-radius: 20px;
     display: flex;
-    padding: 40px 0px 60px 0px;
+    padding: 40px 0px 50px 0px;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 10px 10px 5px rgb(173, 200, 230);
+    /* box-shadow: 10px 10px 5px rgb(173, 200, 230); */
 }
 .login-input-2{
     height: 70%;
@@ -36,31 +37,55 @@
     display: flex;
     flex-direction: column;
     padding: 30px 0px 0px 60px;
+   
 }
 .login-input-2 label{
     font-size: 20px;
     margin-bottom: 10px;
+    margin-top: 30px;
+    color: white;
 }
 .login-input h1{
-    color: rgb(0, 0, 26);
+    color: rgb(255, 255, 255);
     padding-bottom: 20px;
     font-size: 50px;
+  
 }
-.login-input-2 input{
+.wrapper{
     width: 90%;
     height: 20%;
     border-radius: 10px;
-    border: 1px solid rgb(173, 200, 230);
-    padding: 0px 30px 0px 30px;
-    margin-bottom: 30px;
-    background-color: rgb(255, 255, 255);
-    color: white;
+    border: 2px solid rgb(141, 141, 141);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-.login-input-2 input:hover{
-    border-color: #3F00FF;
+.wrapper input{
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 0px 30px 0px 20px;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    
+}
+.MR{
+    margin-left: 15px;
+    color: rgb(255, 255, 255);
+}
+.wrapper:hover{
+    border-color: #ffffff;
+}
+.wrapper:focus{
+    border-color: #ffffff;
+    outline: 0.5px solid #ffffff;
 }
 ::placeholder{
-    color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
     font-size: 19px;
 }
 .login-input p{
@@ -71,9 +96,8 @@ button{
     height: 3.5rem;
     border-radius: 10px;
     border: none;
-    /* margin-bottom: 70px; */
     font-size: 18px;
-    background-color: #3F00FF;
+    background-color: #ff1900;
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -81,9 +105,15 @@ button{
 .login-image{
     width: 50%;
     height: 100%;
-    background-image: url(../../assets/log1.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image{
+    height: 80%;
+    width: 65%;
+    background-image: url(../../assets/Chef.png);
     background-size: cover;
-    
 }
 .login-image img{
     width: 100%;

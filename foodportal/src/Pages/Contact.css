@@ -7,7 +7,7 @@
 }
 .contact-container{
   width: 100vw;
-  height: 90vh;
+  height: 92vh;
   display: flex;
   flex-direction: row;
 }
@@ -17,8 +17,16 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-image: url(./images/img2.jpg);
+  align-items: center;
+  /* background-image: url(../assets/img6.jpeg);
+  background-size: cover; */
+}
+.contact-image-1{
+  height: 50%;
+  width: 70%;
+  background: url(../assets/img15.png);
   background-size: cover;
+  margin: 0px 10px 50px 0px;
 }
 .contact-token-text{
   width: 100%;
@@ -43,18 +51,17 @@
   padding-left: 20px;
 }
 .icon{
-  height: 60%;
-  width: 15%;
+  height: 50%;
+  width: 13%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
   background: rgb(255,255,255,0.2);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .Fb2,.Li2,.Tw2,.Ig2{
   color: #ffffff;
-  font-size: 100px;
   cursor: pointer;
 }
 .contact-token {
@@ -80,8 +87,8 @@
   justify-content: center; */
   font-size: 3rem;
   font-weight: bold;
-  color: #333;
   margin-left: 80px;
+  color: white;
 }
 
 .contact-subtitle {
@@ -89,7 +96,7 @@
   justify-content: center; */
   font-size: 1.2rem;
   margin-bottom: 40px;
-  color: #666;
+  color: #9f9f9f;
   margin-left: 80px;
 }
 .contact-form{
@@ -98,29 +105,61 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
-.contact-input,
+.wrapper-2{
+  width: 80%;
+  margin-bottom: 20px;
+  background: rgba(221, 221, 221, 0.15);
+  border-radius: 5px;
+  font-size: 1rem;
+  /* color: #333; */
+  margin-left: 80px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+.ER{
+  margin: 0px 20px 0px 15px;
+  color: white;
+}
+/* .contact-input, */
   .contact-textarea {
     width: 80%;
-    padding: 10px;
+    border: none;
+    padding: 10px 10px 10px 20px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    color: #333;
+    color: #ffffff;
     margin-left: 80px;
+    font-size: 20px;
+    background: rgba(221, 221, 221, 0.15);
   }
-  .contact-input:hover{
-    border-color: #3F00FF;
+  .wrapper:focus,
+  .contact-textarea:focus{
+    border-color: 0.5px solid #ffffff;
   }
+  .wrapper-2:hover,
   .contact-textarea:hover{
-    border-color: #3F00FF;
+    outline: 1px solid #ffffff;
   }
   .contact-input{
-    height: 70px;
+    width: 90%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    background: transparent;
   }
   .contact-textarea {
     height: 150px;
+  }
+  ::placeholder{
+    color: rgb(172, 172, 172);
   }
   .contact-submit {
     height: 70px;

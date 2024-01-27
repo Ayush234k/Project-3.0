@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    scroll-behavior: smooth;
+  }
+ 
+  .about-main{
+    height: 192vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .about-main-top{
+    width: 100%;
+    height: 100vh;
+  }
+  .our-mission{
+    height: 35%;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: white;
+    padding: 80px 300px 0px 300px;
+  }
+  .our-mission h1{
+    font-size: 50px;
+  }
+  .about-img{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .left-img{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+  }
+  .left-img-1{
+    height: 40%;
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-image: url(../assets/imgA9.jpg);
+    background-size: cover;
+  }
+  .left-img-2{
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-image: url(../assets/imgA11.jpg);
+    background-size: cover;
+  }
+  .center-img{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .center-img-1{
+    width: 80%;
+    height: 85%;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-image: url(../assets/imgA8.jpg);
+    background-size: cover;
+  }
+  .right-img{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+  }
+  .right-img-1{
+    height: 50%;
+    width: 100%;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    background-image: url(../assets/imgA10.jpg);
+    background-size: cover;
+  }
+  .right-img-2{
+    height: 40%;
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-image: url(../assets/imgA12.jpg);
+    background-size: cover;
+  }
+  .about-main-bottom{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .left-desc{
+    width: 45%;
+    height: 100%;
+    padding-top: 120px ;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+  }
+  .right-desc{
+    width: 55%;
+    height: 100%;
+    padding: 140px 120px 0px 120px;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 40px;
+    color: white;
+  }
+
