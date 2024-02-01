@@ -14,7 +14,12 @@
   }
   
   .navbar-brand {
-    font-size: 30px;
+    /* background-image: url(../assets/img17.png);
+    background-size: cover;
+    width: 150px;
+    height: 70px;
+    margin-top: 15px; */
+    font-size: 25px;
     color: rgb(255, 255, 255);
     /* -webkit-text-stroke: 1px rgb(181, 181, 181); */
     font-weight: bold;

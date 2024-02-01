@@ -10,7 +10,7 @@ export default function NotFound() {
             <img src={logo} alt="" style={{ width: "75%", height: "100%"}} />
             </div>
             <Link to={"/"}>
-                <button>Back to Home </button>
+                <div className="btn">Back to Home </div>
             </Link>
         </div>
     );
