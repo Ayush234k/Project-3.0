@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 import axios from 'axios';
 import './Login.css';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
-import MailRoundedIcon from '@mui/icons-material/MailRounded';
 import NoEncryptionRoundedIcon from '@mui/icons-material/NoEncryptionRounded';
-import Signup from '../Signup/Signup';
+// import Signup from '../Signup/Signup';
 // import Footer from '../../Components/Footer'
 // import chef from '../../assets/Chef.png'
 // import log1 from '../../assets/log1.jpg'

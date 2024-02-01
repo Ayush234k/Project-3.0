@@ -5,7 +5,7 @@ import Login from './Pages/Login/Login'
 import AboutUs from './Pages/About';
 import Contact from './Pages/Contact';
 import NotFound from './Pages/NotFound';
-import Signup from './Pages/Signup/Signup';
+import Settings from './Pages/Settings';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Navbar />
             <Routes>
                 <Route path="/" element={ <Login/> }/>
-                <Route path="/dashboard" element={ <Signup/> }/>
+                <Route path="/settings" element={ <Settings/> }/>
                 <Route path="/about" element={ <AboutUs/> }/>
                 <Route path="/contact" element={ <Contact/> }/>
                 <Route path="*" element={<NotFound />} />
