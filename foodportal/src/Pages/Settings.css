@@ -5,6 +5,196 @@
     font-family: 'Kanit', sans-serif;
     scroll-behavior: smooth;
   }
-  h1{
+  .setting-main{
     color: white;
+    width: 100vw;
+    height: 230vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .navn{
+    width: 22%;
+    height: 100vh;
+    border: 1px solid red;
+  } 
+  .setting-cred{
+    width: 78%;
+    height: 100%;
+  }
+  .setting-header{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 0px 30px 70px;
+    font-size: 30px;
+    border: 1px solid red;
+  }
+  .go-to-dashboard{
+    width: 230px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding-top: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background-color: transparent;
+  }
+  .basic-info{
+    width: 100%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid greenyellow;
+  }
+  .box{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 70px;
+    font-size: 23px;
+    /* border: 1px solid greenyellow; */
+  }
+  .wrapper-3{
+    height: 70px;
+    width: 60%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 20px;
+    background: rgba(221, 221, 221, 0.15);
+    margin-left: 50px;
+  }
+  .payment{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid white;
+  }
+  .payment-heading{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px 0px 40px 70px;
+    font-size: 25px;
+  }
+  .payment-cred{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+  }
+  .card-details{
+    width: 25%;
+    height: 100%;
+    padding: 40px 0px 0px 70px;
+    font-size: 23px;
+  }
+  .details{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .detail-input-1{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  label{
+    padding: 25px 0px 0px 70px;
+    font-size: 20px;
+
+  }
+  .detail-input-1 input{
+    height: 70px;
+    width: 85%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 20px;
+    background: rgba(221, 221, 221, 0.15);
+    margin-left: 50px;
+    border: none;
+    outline: none;
+    color: white;
+  }
+  .detail-input-2{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .detail-input-2 input{
+    height: 70px;
+    width: 63%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 20px;
+    background: rgba(221, 221, 221, 0.15);
+    margin-left: 20px;
+    border: none;
+    outline: none;
+    color: white;
+  }
+  .wrapper-4{
+    height: 70px;
+    width: 60%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0pc 20px 0px 40px;
+    font-size: 20px;
+    background: rgba(221, 221, 221, 0.15);
+    margin-left: 50px;
+  }
+  .wrapper-5{
+    height: 70px;
+    width: 28%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0pc 20px 0px 40px;
+    font-size: 20px;
+    background: rgba(221, 221, 221, 0.15);
+    margin-left: 50px;
+  }
+    input{
+    width: 90%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+  }
+  .send{
+    height: 70px;
+    width: 60%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: 50px;
+    background-color: #3F00FF;
+    color: white;
+    cursor: pointer;
   }
