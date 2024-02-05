@@ -5,14 +5,14 @@ import EditIcon from '@mui/icons-material/Edit';
 import PlaceIcon from '@mui/icons-material/Place';
 import './Settings.css'
 
-function Settings() {
+const Settings = () => {
   return (
     <div className='setting-main'>
     <div className='navn'></div>
         <div className='setting-cred'>
             <div className='setting-header'>
                 <div className='go-to-dashboard'>
-                  <ArrowBackIcon sx={{fontSize:30}} />
+                  <ArrowBackIcon sx={{fontSize:30}} className='icon-2' />
                   Back to dashboard
                   </div>
                 <h1>Settings</h1>
@@ -38,24 +38,24 @@ function Settings() {
                     <div className='card-details'>Card Details</div>
                     <div className='details'>
                     <div className='detail-input-1'>
-                        <label>Name on card</label>
+                        <label className='lbl'>Name on card</label>
                         <input 
                          type='text'
                          className='input-1'
                         />
-                        <label>Card number</label>
+                        <label className='lbl'>Card number</label>
                         <input 
                          type='text'
                          className='input-1'
                         />
                     </div>
                     <div className='detail-input-2'>
-                    <label>Expiry</label>
+                    <label className='lbl'>Expiry</label>
                         <input 
                          type='text'
                          className='input-1'
                         />
-                        <label>CVV</label>
+                        <label className='lbl'>CVV</label>
                         <input 
                          type='password'
                          className='input-1'
@@ -70,9 +70,8 @@ function Settings() {
               <input 
                 type='email'
                 placeholder='Enter email'
-                className='input-1'
               />
-              <EditIcon sx={{fontSize:27}}/>
+              <EditIcon sx={{fontSize:22}} className='icon-2'/>
               </div>
             </div>
             <div className='basic-info'>
@@ -81,9 +80,8 @@ function Settings() {
               <input 
                 type='email'
                 placeholder='Enter address'
-                className='input-1'
               />
-              <EditIcon sx={{fontSize:27}}/>
+              <EditIcon sx={{fontSize:22}} className='icon-2'/>
               </div>
             </div>
             <div className='basic-info'>
@@ -92,9 +90,8 @@ function Settings() {
               <input 
                 type='email'
                 placeholder='Enter city'
-                className='input-1'
               />
-              <EditIcon sx={{fontSize:27}}/>
+              <EditIcon sx={{fontSize:22}} className='icon-2'/>
               </div>
             </div>
             <div className='basic-info'>
@@ -103,17 +100,15 @@ function Settings() {
               <input 
                 type='email'
                 placeholder='Enter state'
-                className='input-1'
               />
-              <EditIcon sx={{fontSize:27}}/>
+              <EditIcon sx={{fontSize:22}} className='icon-2'/>
               </div>
               <div className='wrapper-5'>
               <input 
                 type='email'
                 placeholder='Enter pincode'
-                className='input-1'
               />
-              <EditIcon sx={{fontSize:27}}/>
+              <EditIcon sx={{fontSize:22}} className='icon-2'/>
               </div>
             </div>
             <div className='basic-info'>
@@ -122,9 +117,8 @@ function Settings() {
               <input 
                 type='email'
                 placeholder='Enter country'
-                className='input-1'
               />
-              <EditIcon sx={{fontSize:27}}/>
+              <EditIcon sx={{fontSize:22}} className='icon-2'/>
               </div>
             </div>
             <div className='basic-info'>
