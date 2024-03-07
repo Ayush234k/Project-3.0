@@ -50,7 +50,7 @@ const [action,setAction] = useState('Login');
                onChange={(e => setPassword(e.target.value))}
                />
           </div>
-          <label id='required'>Password</label>
+          <label className="underline" id='required'>Password</label>
           <div className='wrapper'>
           <NoEncryptionRoundedIcon sx={{fontSize:27}} className='MR'/>
               <input 
