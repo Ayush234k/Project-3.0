@@ -8,7 +8,7 @@ const AdminRoutes = ({ element }) => {
   ) : (
     <Navigate
       to={{
-        pathname: "/auth",
+        pathname: "/",
       }}
     />
   );

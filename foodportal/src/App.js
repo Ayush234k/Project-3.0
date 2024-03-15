@@ -1,41 +1,56 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import AboutUs from "./Pages/About";
 import Contact from "./Pages/Contact";
 import NotFound from "./Pages/NotFound";
 import Settings from "./Pages/Settings";
 
+import AdminRoutes from "./auth/AdminRoutes.js";
+import PrivateRoutes from "./auth/PrivateRoutes.js";
 
-import AdminRoutes from './auth/AdminRoutes.js';
-import PrivateRoutes from './auth/PrivateRoutes.js';
-
-import AdminDashboard from './user/AdminDashboard.js';
-import UserDashboard from './user/UserDashboard.js';
+import AdminDashboard from "./user/AdminDashboard.js";
+import UserDashboard from "./user/UserDashboard/UserDashboard.jsx";
+import Sidebar from "./Components/Sidebar.jsx";
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <BrowserRouter>
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
-        
-        <Route
+
+        {/* <Route
           path="/user/dashboard"
           element={<PrivateRoutes element={<UserDashboard />} />}
+        /> */}
+
+        {/* <Route
+          path="/admin/dashboard"
+          element={<AdminRoutes element={<AdminDashboard />} />}
+        /> */}
+
+        <Route
+          path="/user/dashboard"
+          element={<UserDashboard />}
         />
         <Route
           path="/admin/dashboard"
-          element={<AdminRoutes element={<AdminDashboard />} />}
+          element={<AdminDashboard />}
         />
-      
+
+        {/* <Route
+          path="/admin/create/"
+          element={<AdminRoutes element={<AddCategory />} />}
+        /> */}
+
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 
