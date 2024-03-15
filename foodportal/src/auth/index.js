@@ -1,7 +1,8 @@
-import API from "../backend.js";
+import API from "../backend";
 
 export const signup = (user) => {
   return fetch(`${API}/auth`, {
+    mode: "no-cors",
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -19,6 +20,7 @@ export const signup = (user) => {
 
 export const signin = (user) => {
   return fetch(`${API}/auth`, {
+    mode: "no-cors",
     method: "POST",
     headers: {
       Accept: "application/json",

@@ -25,24 +25,25 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
 
-        {/* <Route
+        <Route
           path="/user/dashboard"
           element={<PrivateRoutes element={<UserDashboard />} />}
-        /> */}
-
-        {/* <Route
-          path="/admin/dashboard"
-          element={<AdminRoutes element={<AdminDashboard />} />}
-        /> */}
+        />
 
         <Route
+          path="/admin/dashboard"
+          element={<AdminRoutes element={<AdminDashboard />} />}
+        />
+        
+/*
+        {/* <Route
           path="/user/dashboard"
           element={<UserDashboard />}
         />
         <Route
           path="/admin/dashboard"
           element={<AdminDashboard />}
-        />
+        /> */}
 
         {/* <Route
           path="/admin/create/"

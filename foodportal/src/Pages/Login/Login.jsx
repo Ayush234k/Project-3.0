@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
-import PersonIcon from "@mui/icons-material/Person";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import NoEncryptionRoundedIcon from "@mui/icons-material/NoEncryptionRounded";
-// import Signup from '../Signup/Signup';
-// import Footer from '../../Components/Footer'
-// import chef from '../../assets/Chef.png'
-// import log1 from '../../assets/log1.jpg'
 
 import Base from "../../Components/Base";
 
@@ -16,6 +11,20 @@ import { signin, authenticate, isAuthenticated } from "./../../auth/index";
 import { Navigate } from "react-router-dom";
 
 const Login = () => {
+  
+    // const [email, setEmail] = useState();
+    // const [password, setPassword] = useState();
+  
+    // const handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   console.log(email, password);
+    //   axios
+    //     .post("http://localhost:5000/api/users/auth", { email, password })
+    //     .then((result) => console.log(result))
+    //     .catch((err) => console.log(err));
+    // };
+
+  const [action, setAction] = useState("Login");
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -35,11 +44,11 @@ const Login = () => {
     event.preventDefault();
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
-      .then((data) => {
-        if (data.error) {
-          setValues({ ...values, error: data.error, loading: false });
+      .then((res) => {
+        if (res.data.error) {
+          setValues({ ...values, error: res.data.error, loading: false });
         } else {
-          authenticate(data, () => {
+          authenticate(res.data, () => {
             setValues({
               ...values,
               email: "",
@@ -56,15 +65,17 @@ const Login = () => {
   };
 
   const performRedirect = () => {
+    console.log(didRedirect);
+    console.log(user);
     if (didRedirect) {
-      if (user && user.role === 1) {
+      if (user && user.isAdmin) {
         return <Navigate to="/admin/dashboard" />;
       } else {
         return <Navigate to="/user/dashboard" />;
       }
     }
     if (isAuthenticated()) {
-      return <Navigate to="/" />;
+      return <Navigate to="/user/dashboard" />;
     }
   };
 
@@ -89,19 +100,6 @@ const Login = () => {
     );
   };
 
-  // const [email, setEmail] = useState();
-  // const [password, setPassword] = useState();
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(email, password);
-  //   axios
-  //     .post("http://localhost:5000/api/users/auth", { email, password })
-  //     .then((result) => console.log(result))
-  //     .catch((err) => console.log(err));
-  // };
-
-  const [action, setAction] = useState("Login");
   const logInForm = () => {
     return (
       <>
@@ -110,28 +108,14 @@ const Login = () => {
             <div className="login-input">
               <h1>{action}</h1>
               <div className="login-input-2">
-                {/* {action === "Login" ? (
-                  <label></label>
-                ) : (
-                  <label className="email-label" id="required">
-                    Username
-                  </label>
-                )}
-                {action === "Login" ? (
-                  <div></div>
-                ) : (
-                  <div className="wrapper">
-                    <PersonIcon sx={{ fontSize: 27 }} className="MR" />
-                  </div>
-                )} */}
-
                 <label id="required">Email</label>
                 <div className="wrapper">
                   <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
                   <input
-                    type="password"
+                    value={email}
+                    onChange={handleChange("email")}
+                    type="email"
                     placeholder="Enter your email"
-                    onChange={handleChange}
                   />
                 </div>
                 <label className="underline" id="required">
@@ -143,9 +127,10 @@ const Login = () => {
                     className="MR"
                   />
                   <input
+                    value={password}
                     type="password"
                     placeholder="Enter your password"
-                    onChange={handleChange}
+                    onChange={handleChange("password")}
                   />
                 </div>
               </div>
@@ -184,7 +169,6 @@ const Login = () => {
             </div>
             <div className="login-image">
               <div className="image" />
-              {/* <img src={ chef } alt='#'></img> */}
             </div>
           </div>
         </div>
@@ -198,7 +182,7 @@ const Login = () => {
       {errorMessage()}
       {logInForm()}
       {performRedirect()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
+      {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
     </Base>
   );
 };
