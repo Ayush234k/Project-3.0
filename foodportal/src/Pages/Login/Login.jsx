@@ -44,11 +44,12 @@ const Login = () => {
     event.preventDefault();
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
-      .then((res) => {
-        if (res.data.error) {
-          setValues({ ...values, error: res.data.error, loading: false });
+    .then((data) => {
+        console.log(data);
+        if (data.error) {
+          setValues({ ...values, error: data.error, loading: false });
         } else {
-          authenticate(res.data, () => {
+          authenticate(data, () => {
             setValues({
               ...values,
               email: "",
@@ -65,8 +66,8 @@ const Login = () => {
   };
 
   const performRedirect = () => {
-    console.log(didRedirect);
-    console.log(user);
+    // console.log(didRedirect);
+    // console.log(user);
     if (didRedirect) {
       if (user && user.isAdmin) {
         return <Navigate to="/admin/dashboard" />;

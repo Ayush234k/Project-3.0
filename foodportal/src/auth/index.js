@@ -20,7 +20,6 @@ export const signup = (user) => {
 
 export const signin = (user) => {
   return fetch(`${API}/auth`, {
-    mode: "no-cors",
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -29,6 +28,7 @@ export const signin = (user) => {
     body: JSON.stringify(user),
   })
     .then((response) => {
+      console.log(response);
       return response.json();
     })
     .catch((err) => {
