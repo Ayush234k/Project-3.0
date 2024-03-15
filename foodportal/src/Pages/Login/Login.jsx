@@ -110,7 +110,7 @@ const Login = () => {
             <div className="login-input">
               <h1>{action}</h1>
               <div className="login-input-2">
-                {action === "Login" ? (
+                {/* {action === "Login" ? (
                   <label></label>
                 ) : (
                   <label className="email-label" id="required">
@@ -123,7 +123,7 @@ const Login = () => {
                   <div className="wrapper">
                     <PersonIcon sx={{ fontSize: 27 }} className="MR" />
                   </div>
-                )}
+                )} */}
 
                 <label id="required">Email</label>
                 <div className="wrapper">
