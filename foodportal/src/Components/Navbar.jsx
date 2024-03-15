@@ -20,6 +20,7 @@ const Navbar = () => {
           <Link to="/settings">Settings</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/feedback">Feedback</Link>
       </div>
     </nav>
   );

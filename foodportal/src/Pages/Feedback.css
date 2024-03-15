@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    scroll-behavior: smooth;
+  }
+  .feed-main{
+    color: white;
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid yellow; */
+  }
+  .navn{
+    width: 22%;
+    height: 100%;
+    border: 1px solid red;
+  } 
+  .feed-input{
+    width: 78%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid rgb(255, 136, 0); */
+  }
+  .feed-header{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 0px 30px 70px;
+    font-size: 30px;
+    /* border: 1px solid rgb(0, 255, 34); */
+  }
+  .feed-cred{
+    height: 85%;
+    /* border: 1px solid white; */
+    padding: 40px 0px 0px 70px;
+  }
+  .feed-name{
+    font-size: 23px;
+  }
+  select{
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    margin: 10px 0px 40px 0px;
+  }
+  option{
+    font-size: 20px;
+  }
+  .review,
+  .rateing{
+    width: 50%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    /* border: 1px solid red; */
+  }
+  .stars{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid salmon; */
+    margin-left: 40px;
+  }
+  .review{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .feed-text{
+    height: 80%;
+    width: 75%;
+    color: black;
+    padding-left: 20px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+  }
+  .feed-btn{
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    background: #3F00FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    cursor: pointer;
+    margin-top: 50px;
+  }

@@ -15,7 +15,7 @@
   .navn{
     width: 22%;
     /* position: fixed; */
-    height: 100vh;
+    height: 100%;
     border: 1px solid red;
   } 
   .setting-cred{
