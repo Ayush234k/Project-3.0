@@ -6,20 +6,17 @@ import PersonIcon from "@mui/icons-material/Person";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import NoEncryptionRoundedIcon from "@mui/icons-material/NoEncryptionRounded";
 // import Signup from '../Signup/Signup';
-// import Footer from '../../Components/Footer'
-// import chef from '../../assets/Chef.png'
-// import log1 from '../../assets/log1.jpg'
+
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     axios
-      .post("http://localhost:7000/login", { email, password })
+      .post("http://localhost:5000/api/users/auth/", { email, password })
       .then((result) => console.log(result))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log('error from Login.js', err));
   };
 
   const [action, setAction] = useState("Login");
@@ -31,33 +28,13 @@ const Login = () => {
           <div className="login-input">
             <h1>{action}</h1>
             <div className="login-input-2">
-              {action === "Login" ? (
-                <label></label>
-              ) : (
-                <label className="email-label" id="required">
-                  Username
-                </label>
-              )}
-              {action === "Login" ? (
-                <div></div>
-              ) : (
-                <div className="wrapper">
-                  <PersonIcon sx={{ fontSize: 27 }} className="MR" />
-                  <input
-                    type="text"
-                    placeholder="Enter your username"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-              )}
-
               <label id="required">Email</label>
               <div className="wrapper">
                 <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
                 <input
-                  type="password"
+                  type="email"
                   placeholder="Enter your email"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <label className="underline" id="required">
@@ -74,8 +51,7 @@ const Login = () => {
             </div>
             <button
               className={action === "Login" ? "bt" : "bt"}
-              type="submit"
-              onSubmit={handleSubmit}
+              onClick={handleSubmit} // Call handleSubmit on button click
             >
               {action}
             </button>
@@ -95,20 +71,18 @@ const Login = () => {
                 <div>
                   <p>Don't Have An Account?</p>
                   <Link
-                onClick={() => {
-                  setAction("Sign Up");
-                }}
-              >
-                Sign Up
-              </Link>
+                    onClick={() => {
+                      setAction("Sign Up");
+                    }}
+                  >
+                    Sign Up
+                  </Link>
                 </div>
               )}
-              
             </div>
           </div>
           <div className="login-image">
             <div className="image" />
-            {/* <img src={ chef } alt='#'></img> */}
           </div>
         </div>
       </div>
