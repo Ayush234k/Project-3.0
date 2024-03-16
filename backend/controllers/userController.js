@@ -2,6 +2,7 @@ import User from "../models/userModel.js";
 import asyncHandler from "./../middlewares/asyncHandler.js";
 import bcrypt from "bcryptjs/dist/bcrypt.js";
 import createToken from "../utils/createToken.js";
+import jwt from 'jsonwebtoken';
 
 const createUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -38,24 +39,37 @@ const createUser = asyncHandler(async (req, res) => {
 });
 
 const loginUser = asyncHandler(async (req, res) => {
+
   const { email, password } = req.body;
 
-  const existingUser = await User.findOne({ email });
-  if (existingUser) {
+  const user = await User.findOne({ email });
+  if (user) {
     const isPasswordValid = await bcrypt.compare(
       password,
-      existingUser.password
+      user.password
     );
     if (isPasswordValid) {
-      createToken(res, existingUser._id);
-      res.status(201).json({
-        _id: existingUser._id,
-        username: existingUser.username,
-        email: existingUser.email,
-        isAdmin: existingUser.isAdmin,
+      const token = jwt.sign({ _id: user._id }, process.env.REACT_APP_JWT_SECRET);
+
+      res.cookie("token", token, { expire: new Date() + 9999 });
+
+      const { _id, name, email, isAdmin } = user;
+
+      return res.json({
+        token,
+        user: { _id, name, email, isAdmin }
       });
-      return;
     }
+    else {
+      return res.status(401).json({
+        error: "Email and password do not match.",
+      });
+    }
+  }
+  else {
+    return res.status(400).json({
+      error: "User email does not exists.",
+    });
   }
 });
 

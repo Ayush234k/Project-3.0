@@ -10,11 +10,11 @@ export default function RightSidebar() {
   return (
     <div>
       <Box>
-        <MaterialUISwitch
+        {/* <MaterialUISwitch
           sx={{
             zIndex: "1201",
           }}
-        />
+        /> */}
       </Box>
       <Box sx={{ display: "flex", padding: "250px" }}>
         {/* <CssBaseline /> */}

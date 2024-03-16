@@ -12,7 +12,7 @@ const UserDashboard = () => {
         backgroundColor: "white",
         height:"100%",
         display: "grid",
-        gridTemplateColumns: "15% 62% 23%",
+        gridTemplateColumns: "18% 52% 30%",
         gap: "0px",
       }}
     >

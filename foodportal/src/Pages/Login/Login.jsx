@@ -1,29 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "./Login.css";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import NoEncryptionRoundedIcon from "@mui/icons-material/NoEncryptionRounded";
-
-import Base from "../../Components/Base";
 
 import { signin, authenticate, isAuthenticated } from "./../../auth/index";
 import { Navigate } from "react-router-dom";
 
 const Login = () => {
-  
-    // const [email, setEmail] = useState();
-    // const [password, setPassword] = useState();
-  
-    // const handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   console.log(email, password);
-    //   axios
-    //     .post("http://localhost:5000/api/users/auth", { email, password })
-    //     .then((result) => console.log(result))
-    //     .catch((err) => console.log(err));
-    // };
-
   const [action, setAction] = useState("Login");
   const [values, setValues] = useState({
     email: "",
@@ -44,8 +28,7 @@ const Login = () => {
     event.preventDefault();
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
-    .then((data) => {
-        console.log(data);
+      .then((data) => {
         if (data.error) {
           setValues({ ...values, error: data.error, loading: false });
         } else {
@@ -66,8 +49,7 @@ const Login = () => {
   };
 
   const performRedirect = () => {
-    // console.log(didRedirect);
-    // console.log(user);
+    console.log(isAuthenticated());
     if (didRedirect) {
       if (user && user.isAdmin) {
         return <Navigate to="/admin/dashboard" />;
@@ -109,6 +91,29 @@ const Login = () => {
             <div className="login-input">
               <h1>{action}</h1>
               <div className="login-input-2">
+              
+                {/* {action === "Login" ? (
+                  <div>
+                    <label></label>
+                    <div></div>
+                  </div>
+                ) : (
+                  <div>
+                    <label className="email-label" id="required">
+                      Username
+                    </label>
+                    <div className="wrapper">
+                      <PersonIcon sx={{ fontSize: 27 }} className="MR" />
+                      <input
+                        value={username}
+                        type="text"
+                        placeholder="Enter your username"
+                        onChange={handleChange("username")}
+                      />
+                    </div>
+                  </div>
+                )} */}
+
                 <label id="required">Email</label>
                 <div className="wrapper">
                   <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
@@ -178,13 +183,15 @@ const Login = () => {
   };
 
   return (
-    <Base title="Sign in page" description="A page for user to sign in!">
+    <div>
+      {/* <Base title="Sign in page" description="A page for user to sign in!"> */}
       {loadingMessage()}
       {errorMessage()}
       {logInForm()}
       {performRedirect()}
       {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
-    </Base>
+    </div>
+    // </Base>
   );
 };
 export default Login;

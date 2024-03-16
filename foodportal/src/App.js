@@ -34,21 +34,6 @@ function App() {
           path="/admin/dashboard"
           element={<AdminRoutes element={<AdminDashboard />} />}
         />
-        
-/*
-        {/* <Route
-          path="/user/dashboard"
-          element={<UserDashboard />}
-        />
-        <Route
-          path="/admin/dashboard"
-          element={<AdminDashboard />}
-        /> */}
-
-        {/* <Route
-          path="/admin/create/"
-          element={<AdminRoutes element={<AddCategory />} />}
-        /> */}
 
       </Routes>
     </BrowserRouter>
