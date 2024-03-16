@@ -8,8 +8,7 @@ const PrivateRoutes = ({ element }) => {
   ) : (
       <Navigate
         to={{
-          pathname: "/auth",
-          // state: { from: rest.location },
+          pathname: "/",
         }}
       />
   );

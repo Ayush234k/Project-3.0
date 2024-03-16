@@ -8,7 +8,7 @@ import {
   updateUser,
   deleteUserById,
   getUserById,
-  updateUserById
+  updateUserById,
 } from "../controllers/userController.js";
 import { authenticate, authorizeAdmin } from "../middlewares/authMiddleware.js";
 
