@@ -27,12 +27,12 @@ function App() {
 
         <Route
           path="/user/dashboard"
-          element={ <UserDashboard />} 
+          element={<PrivateRoutes element={<UserDashboard />} />}
         />
 
         <Route
           path="/admin/dashboard"
-          element={<AdminDashboard />}
+          element={<AdminRoutes element={<AdminDashboard />} />}
         />
 
       </Routes>
