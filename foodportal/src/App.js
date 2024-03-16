@@ -10,7 +10,7 @@ import Settings from "./Pages/Settings";
 import AdminRoutes from "./auth/AdminRoutes.js";
 import PrivateRoutes from "./auth/PrivateRoutes.js";
 
-import AdminDashboard from "./user/AdminDashboard.js";
+import AdminDashboard from "./user/AdminDashboard/AdminDashboard.js";
 import UserDashboard from "./user/UserDashboard/UserDashboard.jsx";
 import Sidebar from "./Components/Sidebar.jsx";
 
@@ -27,12 +27,12 @@ function App() {
 
         <Route
           path="/user/dashboard"
-          element={<PrivateRoutes element={<UserDashboard />} />}
+          element={ <UserDashboard />} 
         />
 
         <Route
           path="/admin/dashboard"
-          element={<AdminRoutes element={<AdminDashboard />} />}
+          element={<AdminDashboard />}
         />
 
       </Routes>

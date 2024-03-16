@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.168",
     "@mui/x-date-pickers": "^6.19.7",
     "bcryptjs": "^2.4.3",
     "concurrently": "^8.2.2",
