@@ -2,8 +2,8 @@ import * as React from "react";
 import { Box } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import Calendar from "./Calendar";
-import MaterialUISwitch from "./Switch";
+import Calendar from "../Calendar";
+import MaterialUISwitch from "../Switch";
 import zIndex from "@mui/material/styles/zIndex";
 
 export default function RightSidebar() {

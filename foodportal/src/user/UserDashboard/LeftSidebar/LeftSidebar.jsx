@@ -91,15 +91,16 @@
 //   );
 // }
 
-import React from "react";
+import React, { useState } from "react";
 
-import Logo from "../../assets/foodicon.png";
-import LogoutIcon from "@mui/icons-material/Logout";
+import Logo from "../../../assets/foodicon.png";
 
 import "./LeftSidebar.css";
-import { LeftSidebarData } from './Data';
+import { LeftSidebarData } from "../Data";
 
 const LeftSidebar = () => {
+  const [selected, setSelected] = useState(0);
+
   return (
     <div className="Sidebar">
       {/* logo */}
@@ -111,18 +112,17 @@ const LeftSidebar = () => {
       {/* menu */}
       <div className="menu">
         {LeftSidebarData.map((item, index) => {
-          return(
-            <div className="menuItem active">
-              <item.icon/>
-              <span>
-                {item.title}
-              </span>
+          return (
+            <div
+              className={selected === index ? "menuItem active" : "menuItem"}
+              key={index}
+              onClick={() => setSelected(index)}
+            >
+              <item.icon />
+              <span>{item.title}</span>
             </div>
-          )
+          );
         })}
-        <div className="menuItem">
-          <LogoutIcon/>
-        </div>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-import LeftSidebar from "./LeftSidebar.jsx";
-import RightSidebar from "./RightSidebar.jsx";
-import Middle from "./Middle.jsx";
+import LeftSidebar from "./LeftSidebar/LeftSidebar.jsx";
+import RightSidebar from "./RightSidebar/RightSidebar.jsx";
+import Middle from "./Middle/Middle.jsx";
 
 import "./UserDashboard.css";
 
@@ -26,6 +26,7 @@ const UserDashboard = () => {
   <div className="Dashboard">
     <div className="DashboardGlass">
       <LeftSidebar/>
+      <Middle/>
     </div>
   </div>
   );
