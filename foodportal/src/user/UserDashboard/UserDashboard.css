@@ -1,0 +1,14 @@
+.Dashboard{
+    background: white;
+    height: 100vh;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+}
+
+.DashboardGlass{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 11rem auto 20rem;   
+}

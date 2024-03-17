@@ -18,7 +18,7 @@ export default function RightSidebar() {
       </Box>
       <Box sx={{ display: "flex", padding: "250px" }}>
         {/* <CssBaseline /> */}
-        <Drawer
+        {/* <Drawer
           sx={{
             flexShrink: 0,
             "& .MuiDrawer-paper": {
@@ -29,11 +29,11 @@ export default function RightSidebar() {
           }}
           variant="permanent"
           anchor="right"
-        >
-          <List>
+        > */}
+          {/* <List> */}
             <Calendar />
-          </List>
-        </Drawer>
+          {/* </List>
+        </Drawer> */}
       </Box>
     </div>
   );
