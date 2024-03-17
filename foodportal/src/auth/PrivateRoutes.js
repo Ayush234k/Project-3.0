@@ -3,8 +3,17 @@ import { Navigate } from "react-router-dom";
 import { isAuthenticated } from "./index";
 
 const PrivateRoutes = ({ element }) => {
+  const {user} = isAuthenticated();
   return (isAuthenticated()) ? (
-    element
+    user && !user.isAdmin ? (
+      element
+    ) : (
+      <Navigate
+        to={{
+          pathname: "/admin/dashboard",
+        }}
+      />
+    )
   ) : (
       <Navigate
         to={{
