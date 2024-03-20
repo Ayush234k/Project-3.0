@@ -12,7 +12,6 @@ import PrivateRoutes from "./auth/PrivateRoutes.js";
 
 import AdminDashboard from "./user/AdminDashboard/AdminDashboard.js";
 import UserDashboard from "./user/UserDashboard/UserDashboard.jsx";
-import Sidebar from "./Components/Sidebar.jsx";
 
 function App() {
   return (

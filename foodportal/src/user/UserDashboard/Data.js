@@ -10,30 +10,37 @@ export const LeftSidebarData = [
   {
     icon: DashboardIcon,
     title: "Dashboard",
+    path: "/",
   },
   {
     icon: RestaurantMenuIcon,
     title: "Entire Menu",
+    path: "/entireMenu",
   },
   {
     icon: RateReviewIcon,
     title: "Feedback",
+    path: "/feedback",
   },
   {
     icon: NewReleasesIcon,
     title: "Notice",
+    path: "/notice",
   },
   {
     icon: ThreePIcon,
     title: "Contact Us",
+    path: "/contact",
   },
   {
     icon: SettingsIcon,
     title: "Settings",
+    path: "/settings",
   },
   {
     icon: LogoutIcon,
     title: "Log Out",
+    path: "/logout",
   },
 ];
 
@@ -41,65 +48,34 @@ export const CardsData = [
   {
     title: "Breakfast",
     color: {
-      backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-      boxShadow: "0px 10px 20px 0px #e0c6f5",
+      background: "#397E62",
+      color: "white"
     },
-    barValue: 70,
-    value: "25,670",
-    series: [
-        {
-            name: "Sales",
-            data: [31, 40, 28, 51, 42, 109, 100],
-        }
-    ],
     body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
   },
   {
     title: "Lunch",
     color: {
-      backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-      boxShadow: "0px 10px 20px 0px #e0c6f5",
+      background: "#397E62", 
+      color: "white"
     },
-    barValue: 70,
-    value: "25,670",
-    series: [
-        {
-            name: "Sales",
-            data: [31, 40, 28, 51, 42, 109, 100],
-        }
-    ],
     body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
   },
   {
     title: "Snacks",
     color: {
-      backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-      boxShadow: "0px 10px 20px 0px #e0c6f5",
+      background: "#397E62", 
+      color: "white"
     },
-    barValue: 70,
-    value: "25,670",
-    series: [
-        {
-            name: "Sales",
-            data: [31, 40, 28, 51, 42, 109, 100],
-        }
-    ],
     body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
   },
   {
     title: "Dinner",
     color: {
-      backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
-      boxShadow: "0px 10px 20px 0px #e0c6f5",
+      background: "#397E62", 
+      color: "white"
     },
-    barValue: 70,
-    value: "25,670",
-    series: [
-        {
-            name: "Sales",
-            data: [31, 40, 28, 51, 42, 109, 100],
-        }
-    ],
     body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
   },
+
 ];

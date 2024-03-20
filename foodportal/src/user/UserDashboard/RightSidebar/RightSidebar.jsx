@@ -1,40 +1,22 @@
-import * as React from "react";
-import { Box } from "@mui/material";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import Calendar from "../Calendar";
-import MaterialUISwitch from "../Switch";
-import zIndex from "@mui/material/styles/zIndex";
+import React from "react";
+import "./RightSidebar.css";
 
-export default function RightSidebar() {
+import Calendar from "../Calendar";
+
+const RightSidebar = () => {
+
   return (
-    <div>
-      <Box>
-        {/* <MaterialUISwitch
-          sx={{
-            zIndex: "1201",
-          }}
-        /> */}
-      </Box>
-      <Box sx={{ display: "flex", padding: "250px" }}>
-        {/* <CssBaseline /> */}
-        {/* <Drawer
-          sx={{
-            flexShrink: 0,
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              height: "100%",
-              width: "23%",
-            },
-          }}
-          variant="permanent"
-          anchor="right"
-        > */}
-          {/* <List> */}
-            <Calendar />
-          {/* </List>
-        </Drawer> */}
-      </Box>
+    <div className="RightSidebar">
+      <div>
+        <h3>Select Date</h3>
+        <Calendar/>
+      </div>
+      <div>
+        <h3>Notice</h3>
+        
+      </div>
     </div>
-  );
+  )
 }
+
+export default RightSidebar;

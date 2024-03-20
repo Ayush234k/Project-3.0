@@ -1,7 +1,20 @@
+:root {
+    --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+    --orange: #fca61f;
+    --black: #242d49;
+    --gray: #788097;
+    --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+    --pink: #FF919D;
+    --glass: rgba(255, 255, 255, 0.54);
+  }
+
 .Dashboard{
+    color: var(--black);
     background: white;
     height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Inter', sans-serif;
 }
 
@@ -9,6 +22,27 @@
     display: grid;
     height: 100%;
     width: 100%;
+    background: var(--glass);
+    gap: 10px;
+    grid-template-columns: 11rem auto 20rem;
     overflow: hidden;
-    grid-template-columns: 11rem auto 20rem;   
+}
+
+@media screen and (max-width: 1200px) {
+    .DashboardGlass{
+        grid-template-columns: 10% 50% auto;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .DashboardGlass{
+        height: 97%;
+        width: 97%;
+        border-radius: 2rem;
+        grid-template-columns: 1fr;
+    }
+    .DashboardGlass::-webkit-scrollbar{
+        display: none;
+    }
 }

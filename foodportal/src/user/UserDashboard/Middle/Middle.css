@@ -1,5 +1,30 @@
-.Middle{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+.Cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* justify-content: "center";
+    justify-items: "center";
+    align-content: "center";
+    align-items: "center"; */
+    height: "100%";
+    border-right: 2px solid black;
+}
+
+.parentContainer{
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .Cards{
+        display: flex;
+        flex-direction: column;
+    }
+    .parentContainer{
+        height: 9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Cards{
+        width: 90%;
+    }
 }

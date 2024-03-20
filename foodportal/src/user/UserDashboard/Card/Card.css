@@ -1,0 +1,10 @@
+.RecipeCard{
+    display: flex;
+    flex: 1;
+    height: 7rem !important;
+    border-radius: 0.7rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+}
