@@ -1,12 +1,15 @@
 import React from 'react';
-import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EditIcon from '@mui/icons-material/Edit';
-import PlaceIcon from '@mui/icons-material/Place';
+// import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
+// import PlaceIcon from '@mui/icons-material/Place';
 import './Settings.css'
+import Navbar from '../Components/Navbar';
 
 const Settings = () => {
   return (
+    <>
+    <Navbar/>
     <div className='setting-main'>
     <div className='navn'></div>
         <div className='setting-cred'>
@@ -19,15 +22,15 @@ const Settings = () => {
             </div>
             <div className='basic-info'>
                 <div className='box'>Name</div>
-                <div className='wrapper-3'>Ayush Singh</div>
+                <div className='wrapper-4'>Ayush Singh</div>
             </div>
             <div className='basic-info'>
                 <div className='box'>Roll Number</div>
-                <div className='wrapper-3'>21052242</div>
+                <div className='wrapper-4'>21052242</div>
               </div>
             <div className='basic-info'>
                 <div className='box'>Hostel</div>
-                <div className='wrapper-3'>KP-9C</div>
+                <div className='wrapper-4'>KP-9C</div>
             </div>
             <div className='payment'>
               <div className='payment-heading'>
@@ -127,6 +130,7 @@ const Settings = () => {
             </div>
       </div>
     </div>
+    </>
   );
 }
 

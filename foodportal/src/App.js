@@ -14,15 +14,17 @@ import PrivateRoutes from './auth/PrivateRoutes.js';
 
 import AdminDashboard from './user/AdminDashboard.js';
 import UserDashboard from './user/UserDashboard.js';
+import SignUp from "./Pages/SignUp/SignUp.jsx";
+import Banner from "./Pages/Banner.jsx";
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Banner />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="*" element={<NotFound />} />

@@ -1,11 +1,15 @@
 import React from 'react';
+import Navbar from '../Components/Navbar';
 import './About.css'
 
 function AboutUs(){
 
     return(
-
-       <div className='about-main'>
+        <>
+        <Navbar />
+        <div className="about-container">
+        <div className='navn'></div>
+        <div className='about-main'>
         <div className='about-main-top'>
                 <div className='our-mission'>
                     <h1>Our Mission</h1>
@@ -43,7 +47,9 @@ function AboutUs(){
                 </div>
         </div> 
     </div>
-            
+    </div>  
+    </> 
     );
 }
+
 export default AboutUs;

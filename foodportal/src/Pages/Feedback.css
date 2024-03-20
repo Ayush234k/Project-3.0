@@ -1,3 +1,7 @@
+@font-face{
+  font-family: "Custom-1";
+  src : url(../assets/fonts/Peanut\ Butter.otf);
+}
 *{
     margin: 0;
     padding: 0;
@@ -11,12 +15,14 @@
     height: 92vh;
     display: flex;
     flex-direction: row;
+    background-color: transparent;
+    background-color: #010108;
     /* border: 1px solid yellow; */
   }
   .navn{
     width: 22%;
     height: 100%;
-    border: 1px solid red;
+    background-color: rgb(35, 35, 35);
   } 
   .feed-input{
     width: 78%;
@@ -33,65 +39,126 @@
     justify-content: space-around;
     padding: 0px 0px 30px 70px;
     font-size: 30px;
+    color: #ffffff;
     /* border: 1px solid rgb(0, 255, 34); */
   }
-  .feed-cred{
+  .feed-body{
     height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     /* border: 1px solid white; */
-    padding: 40px 0px 0px 70px;
+  }
+  .feed-cred{
+    height: 100%;
+    width: 55%;
+    color: #ffffff;
+    /* border: 1px solid greenyellow; */
+    padding: 0px 0px 0px 70px;
+  }
+  .feed-img{
+    height: 100%;
+    width: 45%;
+    /* border: 1px solid rgb(255, 0, 0); */
+    /* margin-top: 50px; */
+  }
+  .img-1{
+    width: 100%;
+    height: 70%;
+    /* border: 1px solid rgb(0, 26, 255); */
+    background: url(../assets/giF1.gif);
+    background-size: cover;
+  }
+  .img-text{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #ffffff;
+    padding: 20px 10px 0px 10px;
+    font-family: "Custom-1";
+    font-size: 50px;
   }
   .feed-name{
     font-size: 23px;
+    padding-left: 10px;
+    color: #ffffff;
   }
   select{
-    width: 50%;
-    height: 50px;
-    border-radius: 5px;
-    margin: 10px 0px 40px 0px;
+    width: 90%;
+    height: 60px;
+    border-radius: 7px;
+    font-size: 20px;
+    padding-left: 10px;
+    color: #ffffff;
+    background: rgba(221, 221, 221, 0.15);
+    margin: 10px 0px 20px 0px;
+    border: none;
+    outline: none;
+    box-shadow: 8px 8px #676767;
   }
+  /* #feed-select{
+    color: white;
+    height: 25px;
+    width: 550px;
+    font-size: 20px;
+    background: rgba(221, 221, 221, 0.15);
+  } */
   option{
+    color: rgb(45, 45, 45);
     font-size: 20px;
   }
-  .review,
   .rateing{
-    width: 50%;
+    width: 90%;
     height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 20px;
-    /* border: 1px solid red; */
+  }
+  .review{
+    width: 90%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    justify-content: space-between;
   }
   .stars{
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
-    /* border: 1px solid salmon; */
     margin-left: 40px;
-  }
-  .review{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
   .feed-text{
     height: 80%;
-    width: 75%;
-    color: black;
-    padding-left: 20px;
-    border-radius: 5px;
-    background-color: whitesmoke;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    padding: 15px 0px 0px 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    font-size: 20px;
+    box-shadow: 8px 8px #676767;
+
+  }
+  .feed-text::placeholder{
+    color: rgb(156, 156, 156);
+  }
+  select:hover,
+  .feed-text:hover{
+    outline: 1px solid #ffffff;
   }
   .feed-btn{
-    width: 50%;
-    height: 50px;
-    border-radius: 5px;
-    background: #3F00FF;
+    width: 90%;
+    height: 55px;
+    border-radius: 7px;
+    background: #7200eb;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
+    font-size: 1.2rem;
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 25px;
+    color: white;
   }
