@@ -4,87 +4,49 @@ import "./Signup.css";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import NoEncryptionRoundedIcon from "@mui/icons-material/NoEncryptionRounded";
 
-import { signin, authenticate, isAuthenticated } from "../../auth/index";
+import { signup } from "../../auth/index";
 import { Navigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 
 const Signup = () => {
-  const [action, setAction] = useState("Login");
   const [values, setValues] = useState({
+    username: "",
     email: "",
     password: "",
     error: "",
-    loading: false,
-    didRedirect: false,
+    success: false,
   });
 
-  const { email, password, error, loading, didRedirect } = values;
-  const { user } = isAuthenticated();
+  const { username, email, password, error, success } = values;
 
-  const handleChange = (name) => (event) => {
-    setValues({ ...values, error: false, [name]: event.target.value });
+  const handleChange = (username) => (event) => {
+    setValues({ ...values, error: false, [username]: event.target.value });
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setValues({ ...values, error: false, loading: true });
-    signin({ email, password })
+    setValues({ ...values, error: false });
+    signup({ username, email, password })
       .then((data) => {
         if (data.error) {
-          setValues({ ...values, error: data.error, loading: false });
+          setValues({ ...values, error: data.error, success: false });
         } else {
-          authenticate(data, () => {
             setValues({
               ...values,
+              username: "",
               email: "",
               password: "",
               error: "",
-              didRedirect: true,
+              success: true,
             });
-          });
-        }
+          }
       })
       .catch((err) => {
-        console.log("Sign in failed");
+        console.log("Error in signup!", err);
       });
   };
 
-  const performRedirect = () => {
-    console.log(isAuthenticated());
-    if (didRedirect) {
-      if (user && user.isAdmin) {
-        return <Navigate to="/admin/dashboard" />;
-      } else {
-        return <Navigate to="/user/dashboard" />;
-      }
-    }
-    if (isAuthenticated()) {
-      return <Navigate to="/user/dashboard" />;
-    }
-  };
-
-  const loadingMessage = () => {
-    return (
-      loading && (
-        <div className="alert alert-info">
-          <h2>Loading...</h2>
-        </div>
-      )
-    );
-  };
-
-  const errorMessage = () => {
-    return (
-      <div
-        className="alert alert-danger col-md-6 offset-sm-3 text-left"
-        style={{ display: error ? "" : "none" }}
-      >
-        {error}
-      </div>
-    );
-  };
-
-  const logInForm = () => {
+  const signUpForm = () => {
     return (
       <>
       <Navbar/>
@@ -97,10 +59,10 @@ const Signup = () => {
                 <div className="wrapper">
                   <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
                   <input
-                    value={email}
-                    onChange={handleChange("email")}
-                    type="email"
-                    placeholder="Enter name"
+                    value={username}
+                    onChange={handleChange("username")}
+                    type="text"
+                    placeholder="Enter your username"
                   />
                 </div>
                 <label id="required">Email</label>
@@ -154,13 +116,35 @@ const Signup = () => {
     );
   };
 
+  const successMessage = () => {
+    return (
+      <div
+        className="alert alert-success col-md-6 offset-sm-3 text-left"
+        style={{ display: success ? "" : "none" }}
+      >
+        New account was created successfully. Please
+        <Link to="/signin">Login here</Link>.
+      </div>
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className="alert alert-danger col-md-6 offset-sm-3 text-left"
+        style={{ display: error ? "" : "none" }}
+      >
+        {error}
+      </div>
+    );
+  };
+
   return (
     <div>
       {/* <Base title="Sign in page" description="A page for user to sign in!"> */}
-      {loadingMessage()}
+      {successMessage()}
       {errorMessage()}
-      {logInForm()}
-      {performRedirect()}
+      {signUpForm()}
       {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
     </div>
     // </Base>
