@@ -12,7 +12,7 @@ function Banner(){
 
     useEffect(() => {
         AOS.init({
-            offset: 120,
+            offset: 50,
             duration: 1000,
          });
     }, [])
