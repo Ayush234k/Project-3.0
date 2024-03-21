@@ -8,6 +8,7 @@ import Feedback from "./Pages/Feedback.jsx";
 import NotFound from "./Pages/NotFound";
 import Settings from "./Pages/Settings";
 import Signup from "./Pages/Signup/Signup.jsx";
+import Banner from './Pages/Banner';
 
 import AdminRoutes from "./auth/AdminRoutes.js";
 import PrivateRoutes from "./auth/PrivateRoutes.js";
@@ -20,7 +21,7 @@ function App() {
     <BrowserRouter>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={"Hello"}/>
+        <Route path="/" element={<Banner/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/settings" element={<Settings />} />
