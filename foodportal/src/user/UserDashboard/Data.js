@@ -10,7 +10,7 @@ export const LeftSidebarData = [
   {
     icon: DashboardIcon,
     title: "Dashboard",
-    path: "/",
+    path: "/login",
   },
   {
     icon: RestaurantMenuIcon,

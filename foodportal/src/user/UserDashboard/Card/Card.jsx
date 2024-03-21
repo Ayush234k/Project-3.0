@@ -11,9 +11,7 @@ import UndoIcon from "@mui/icons-material/Undo";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import Stack from "@mui/material/Stack";
 
-import { CardsData } from "../Data";
 import "./Card.css";
-import { motion } from "framer-motion";
 
 export default function RecipeCard({ heading, body }) {
   return (

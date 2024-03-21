@@ -4,11 +4,14 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EditIcon from '@mui/icons-material/Edit';
 import PlaceIcon from '@mui/icons-material/Place';
 import './Settings.css'
+import LeftSidebar from '../user/UserDashboard/LeftSidebar/LeftSidebar';
 
 const Settings = () => {
   return (
     <div className='setting-main'>
-    <div className='navn'></div>
+    <div className='navn'>
+      <LeftSidebar/>
+    </div>
         <div className='setting-cred'>
             <div className='setting-header'>
                 <div className='go-to-dashboard'>

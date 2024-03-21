@@ -6,6 +6,7 @@ import AboutUs from "./Pages/About";
 import Contact from "./Pages/Contact";
 import NotFound from "./Pages/NotFound";
 import Settings from "./Pages/Settings";
+import Signup from "./Pages/Signup/Signup.jsx";
 
 import AdminRoutes from "./auth/AdminRoutes.js";
 import PrivateRoutes from "./auth/PrivateRoutes.js";
@@ -18,7 +19,9 @@ function App() {
     <BrowserRouter>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={"Hello"}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
