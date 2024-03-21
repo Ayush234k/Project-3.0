@@ -1,11 +1,12 @@
 import RecipeReviewCard from "../Cards/Card1";
 import './Midst.css';
+// import { CardsData } from "../Data/Data";
 const Mid=()=>{
   return(<div className="mid" >
-    <RecipeReviewCard meal={"Breakfast"}/>
-    <RecipeReviewCard meal={"Lunch"}/>
-    <RecipeReviewCard meal={"Snack"}/>
-    <RecipeReviewCard meal={"Dinner"}/>
+    <RecipeReviewCard heading={"Breakfast"} />
+    <RecipeReviewCard heading={"Lunch"}/>
+    <RecipeReviewCard heading={"Snack"}/>
+    <RecipeReviewCard heading={"Dinner"}/>
     
   </div>)
 }

@@ -8,33 +8,38 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
-
-export default function RecipeReviewCard({meal}) {
+import EditIcon from '@mui/icons-material/Edit';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+export default function RecipeReviewCard({ heading,body }) {
   return (
-    <Card sx={{ maxWidth: 345, background: "#397E62" }}>
-      <CardHeader sx={{ color: "white" }} title={meal} />
+    <Card sx={{ maxWidth: 320, background: "#397E62", color: "white" }}>
+      <CardHeader title={heading} />
       <CardContent>
-        <Typography variant="body2" color="white">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+        <Typography variant="body2">
+          {body}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <Stack direction="row" spacing={2}>
           <Button
-            sx={{ color: "white", borderColor: "white" }}
-            variant="outlined"
-            startIcon={<DeleteIcon />}
+            variant="contained"
+            startIcon={<EditIcon />}
+            sx={{
+              background: "#3A6E49",
+              color: "white",
+            }}
           >
-            Delete
+            Edit
           </Button>
           <Button
-            sx={{ background: "#397E62", color: "white", borderColor: "white" }}
             variant="contained"
-            endIcon={<SendIcon />}
+            endIcon={<CheckCircleIcon />}
+            sx={{
+              background: "#A2D9A1",
+              color: "white",
+            }}
           >
-            Send
+            Save
           </Button>
         </Stack>
       </CardActions>

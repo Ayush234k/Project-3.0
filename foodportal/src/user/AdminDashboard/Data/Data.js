@@ -33,3 +33,38 @@ import LogoutIcon from '@mui/icons-material/Logout';
     heading:'Logout'
   },
 ]
+export const CardsData = [
+  {
+    title: "Breakfast",
+    color: {
+      background: "#397E62",
+      color: "white"
+    },
+    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+  },
+  {
+    title: "Lunch",
+    color: {
+      background: "#397E62", 
+      color: "white"
+    },
+    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+  },
+  {
+    title: "Snacks",
+    color: {
+      background: "#397E62", 
+      color: "white"
+    },
+    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+  },
+  {
+    title: "Dinner",
+    color: {
+      background: "#397E62", 
+      color: "white"
+    },
+    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+  },
+
+];
