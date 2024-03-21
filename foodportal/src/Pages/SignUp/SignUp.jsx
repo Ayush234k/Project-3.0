@@ -4,7 +4,7 @@ import "./Signup.css";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import NoEncryptionRoundedIcon from "@mui/icons-material/NoEncryptionRounded";
 
-import { signin, authenticate, isAuthenticated } from "./../../auth/index";
+import { signin, authenticate, isAuthenticated } from "../../auth/index";
 import { Navigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 
