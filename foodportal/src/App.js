@@ -14,13 +14,14 @@ import PrivateRoutes from "./auth/PrivateRoutes.js";
 
 import AdminDashboard from "./user/AdminDashboard/AdminDashboard.js";
 import UserDashboard from "./user/UserDashboard/UserDashboard.jsx";
+import Banner from "./Pages/Banner.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={"Hello"}/>
+        <Route path="/" element={<Banner/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/settings" element={<Settings />} />
