@@ -91,31 +91,8 @@ const Login = () => {
         <div className="login-main">
           <div className="login-credentials">
             <div className="login-input">
-              <h1>{action}</h1>
+              <h1>Login</h1>
               <div className="login-input-2">
-              
-                {/* {action === "Login" ? (
-                  <div>
-                    <label></label>
-                    <div></div>
-                  </div>
-                ) : (
-                  <div>
-                    <label className="email-label" id="required">
-                      Username
-                    </label>
-                    <div className="wrapper">
-                      <PersonIcon sx={{ fontSize: 27 }} className="MR" />
-                      <input
-                        value={username}
-                        type="text"
-                        placeholder="Enter your username"
-                        onChange={handleChange("username")}
-                      />
-                    </div>
-                  </div>
-                )} */}
-
                 <label id="required">Email</label>
                 <div className="wrapper">
                   <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
@@ -143,36 +120,19 @@ const Login = () => {
                 </div>
               </div>
               <button
-                className={action === "Login" ? "bt" : "bt"}
+                className='bt'
                 type="submit"
                 onClick={onSubmit}
               >
-                {action}
+              Login
               </button>
               <div className="Change">
-                {action === "Sign Up" ? (
-                  <div>
-                    <p>Already Have An Account?</p>
-                    <Link
-                      onClick={() => {
-                        setAction("Login");
-                      }}
-                    >
-                      Login
-                    </Link>
-                  </div>
-                ) : (
                   <div>
                     <p>Don't Have An Account?</p>
-                    <Link
-                      onClick={() => {
-                        setAction("Sign Up");
-                      }}
-                    >
-                      Sign Up
+                    <Link to='/signup'>
+                      SignUp
                     </Link>
                   </div>
-                )}
               </div>
             </div>
             <div className="login-image">
