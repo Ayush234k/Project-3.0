@@ -1,134 +1,169 @@
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import "./Login.css";
-// import { signup } from "./../auth/helper/index";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Signup.css";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import NoEncryptionRoundedIcon from "@mui/icons-material/NoEncryptionRounded";
 
-// const Signup = () => {
-//   const [values, setValues] = useState({
-//     name: "",
-//     email: "",
-//     password: "",
-//     error: "",
-//     success: false,
-//   });
-
-//   const { name, email, password, error, success } = values;
-
-//   const handleChange = (name) => (event) => {
-//     setValues({ ...values, error: false, [name]: event.target.value });
-//   };
-
-//   const onSubmit = (event) => {
-//     event.preventDefault();
-//     setValues({ ...values, error: false });
-//     signup({ name, email, password })
-//       .then((data) => {
-//         if (data.error) {
-//           setValues({ ...values, error: data.error, success: false });
-//         } else {
-//           setValues({
-//             ...values,
-//             name: "",
-//             email: "",
-//             password: "",
-//             error: "",
-//             success: true,
-//           });
-//         }
-//       })
-//       .catch((err) => {
-//         console.log("Error in signup", err);
-//       });
-//   };
-
-//   const signUpForm = () => {
-//     return (
-//       <div className="row">
-//         <div className="col-md-6 offset-sm-3 text-left">
-//           <form>
-//             <div className="form-group">
-//               <label className="text-light">Name</label>
-//               <input
-//                 className="form-control"
-//                 onChange={handleChange("name")}
-//                 type="text"
-//                 value={name}
-//               />
-//             </div>
-//             <div className="form-group">
-//               <label className="text-light">Email</label>
-//               <input
-//                 className="form-control"
-//                 onChange={handleChange("email")}
-//                 type="email"
-//                 value={email}
-//               />
-//             </div>
-//             <div className="form-group">
-//               <label className="text-light">Password</label>
-//               <input
-//                 className="form-control"
-//                 onChange={handleChange("password")}
-//                 type="password"
-//                 value={password}
-//               />
-//             </div>
-//             <button
-//               onClick={onSubmit}
-//               className="btn btn-success btn-block form-control"
-//             >
-//               Submit
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     );
-//   };
-
-//   const successMessage = () => {
-//     return (
-//       <div
-//         className="alert alert-success col-md-6 offset-sm-3 text-left"
-//         style={{ display: success ? "" : "none" }}
-//       >
-//         New account was created successfully. Please
-//         <Link to="/signin">Login here</Link>.
-//       </div>
-//     );
-//   };
-
-//   const errorMessage = () => {
-//     return (
-//       <div
-//         className="alert alert-danger col-md-6 offset-sm-3 text-left"
-//         style={{ display: error ? "" : "none" }}
-//       >
-//         {error}
-//       </div>
-//     );
-//   };
-
-//   return (
-//     // <Base title="Sign up page" description="A page for user to sign up!">
-//     //   {successMessage()}
-//     //   {errorMessage()}
-//     //   {signUpForm()}
-//       <p className="text-white text-center">{JSON.stringify(values)}</p>
-//     // </Base>
-//   );
-// };
-
-// export default Signup;
-
-
-import React from 'react'
+import { signin, authenticate, isAuthenticated } from "./../../auth/index";
+import { Navigate } from "react-router-dom";
+import Navbar from "../../Components/Navbar";
 
 const Signup = () => {
+  const [action, setAction] = useState("Login");
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+    error: "",
+    loading: false,
+    didRedirect: false,
+  });
+
+  const { email, password, error, loading, didRedirect } = values;
+  const { user } = isAuthenticated();
+
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, error: false, [name]: event.target.value });
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    setValues({ ...values, error: false, loading: true });
+    signin({ email, password })
+      .then((data) => {
+        if (data.error) {
+          setValues({ ...values, error: data.error, loading: false });
+        } else {
+          authenticate(data, () => {
+            setValues({
+              ...values,
+              email: "",
+              password: "",
+              error: "",
+              didRedirect: true,
+            });
+          });
+        }
+      })
+      .catch((err) => {
+        console.log("Sign in failed");
+      });
+  };
+
+  const performRedirect = () => {
+    console.log(isAuthenticated());
+    if (didRedirect) {
+      if (user && user.isAdmin) {
+        return <Navigate to="/admin/dashboard" />;
+      } else {
+        return <Navigate to="/user/dashboard" />;
+      }
+    }
+    if (isAuthenticated()) {
+      return <Navigate to="/user/dashboard" />;
+    }
+  };
+
+  const loadingMessage = () => {
+    return (
+      loading && (
+        <div className="alert alert-info">
+          <h2>Loading...</h2>
+        </div>
+      )
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className="alert alert-danger col-md-6 offset-sm-3 text-left"
+        style={{ display: error ? "" : "none" }}
+      >
+        {error}
+      </div>
+    );
+  };
+
+  const logInForm = () => {
+    return (
+      <>
+      <Navbar/>
+        <div className="login-main">
+          <div className="login-credentials">
+            <div className="login-input">
+              <h1>Create Account</h1>
+              <div className="login-input-2">
+              <label id="required">Full Name</label>
+                <div className="wrapper">
+                  <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
+                  <input
+                    value={email}
+                    onChange={handleChange("email")}
+                    type="email"
+                    placeholder="Enter name"
+                  />
+                </div>
+                <label id="required">Email</label>
+                <div className="wrapper">
+                  <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
+                  <input
+                    value={email}
+                    onChange={handleChange("email")}
+                    type="email"
+                    placeholder="Enter email"
+                  />
+                </div>
+                <label className="underline" id="required">
+                  Password
+                </label>
+                <div className="wrapper">
+                  <NoEncryptionRoundedIcon
+                    sx={{ fontSize: 27 }}
+                    className="MR"
+                  />
+                  <input
+                    value={password}
+                    type="password"
+                    placeholder="Enter password"
+                    onChange={handleChange("password")}
+                  />
+                </div>
+              </div>
+              <button
+                className='bt'
+                type="submit"
+                onClick={onSubmit}
+              >
+                Signup
+              </button>
+              <div className="Change">
+                  <div>
+                    <p>Already Have An Account?</p>
+                    <Link to='/login'>
+                      Login
+                    </Link>
+                  </div>
+              </div>
+            </div>
+            <div className="login-image">
+              <div className="image" />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
   return (
     <div>
-      <p>Helllo SIgnup Page</p>
+      {/* <Base title="Sign in page" description="A page for user to sign in!"> */}
+      {loadingMessage()}
+      {errorMessage()}
+      {logInForm()}
+      {performRedirect()}
+      {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
     </div>
-  )
-}
-
+    // </Base>
+  );
+};
 export default Signup;
