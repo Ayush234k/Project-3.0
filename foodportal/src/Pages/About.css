@@ -5,31 +5,36 @@
     font-family: 'Kanit', sans-serif;
     scroll-behavior: smooth;
   }
- 
-  .about-main{
+  .about-container{
     height: 192vh;
     width: 100vw;
+    display: flex;
+    flex-direction:row;
+  }
+  .about-main{
+    height: 100%;
+    width: 78%;
     display: flex;
     flex-direction: column;
   }
   .about-main-top{
     width: 100%;
-    height: 100vh;
+    height:50%;
   }
   .our-mission{
-    height: 35%;
+    height: 40%;
     width: 100%;
     text-align: center;
     line-height: 30px;
     font-size: 20px;
     color: white;
-    padding: 80px 300px 0px 300px;
+    padding: 80px 150px 0px 150px;
   }
   .our-mission h1{
     font-size: 50px;
   }
   .about-img{
-    height: 65%;
+    height: 60%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -61,7 +66,7 @@
   }
   .center-img{
     height: 100%;
-    width: 25%;
+    width: 30%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -100,23 +105,23 @@
     background-size: cover;
   }
   .about-main-bottom{
-    height: 100vh;
+    height: 50%;
     width: 100%;
     display: flex;
     flex-direction: row;
   }
   .left-desc{
-    width: 45%;
+    width: 40%;
     height: 100%;
     padding-top: 120px ;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
   }
   .right-desc{
-    width: 55%;
+    width: 60%;
     height: 100%;
-    padding: 140px 120px 0px 120px;
+    padding: 140px 70px 0px 70px;
     text-align: justify;
     font-size: 18px;
     line-height: 40px;
