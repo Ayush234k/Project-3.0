@@ -10,13 +10,16 @@
     width: 100vw;
     height: 230vh;
     display: flex;
+    background-color: #010108;
     flex-direction: row;
   }
   .navn{
     width: 22%;
     /* position: fixed; */
-    height: 100vh;
-    border: 1px solid red;
+    height: 100%;
+    background-color: #010108;
+    border: 1px solid #7200eb;
+    /* border: 1px solid red; */
   } 
   .setting-cred{
     width: 78%;
@@ -60,7 +63,7 @@
     padding-left: 70px;
     font-size: 23px;
   }
-  .wrapper-3{
+  .wrapper-4{
     height: 60px;
     width: 60%;
     border-radius: 5px;
@@ -160,6 +163,7 @@
     font-size: 20px;
     background: rgba(221, 221, 221, 0.15);
     margin-left: 50px;
+    box-shadow: 8px 8px #676767;
   }
   .wrapper-5{
     height: 60px;
@@ -172,6 +176,8 @@
     font-size: 20px;
     background: rgba(221, 221, 221, 0.15);
     margin-left: 50px;
+    box-shadow: 8px 8px #676767;
+
   }
     input{
     width: 90%;
@@ -182,6 +188,9 @@
     color: white;
     background-color: transparent;
   }
+  .input-1{
+    box-shadow: 8px 8px #676767;
+  }
   .send{
     height: 60px;
     width: 60%;
@@ -191,7 +200,7 @@
     justify-content: center;
     font-size: 20px;
     margin-left: 50px;
-    background-color: #3F00FF;
+    background-color: #7b00ff;
     color: white;
     cursor: pointer;
   }
