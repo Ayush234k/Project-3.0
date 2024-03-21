@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
@@ -10,15 +11,15 @@ import UndoIcon from "@mui/icons-material/Undo";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import Stack from "@mui/material/Stack";
 
-export default function RecipeCard({ heading }) {
+import "./Card.css";
+
+export default function RecipeCard({ heading, body }) {
   return (
     <Card sx={{ maxWidth: 320, background: "#397E62", color: "white" }}>
       <CardHeader title={heading} />
       <CardContent>
         <Typography variant="body2">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {body}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
