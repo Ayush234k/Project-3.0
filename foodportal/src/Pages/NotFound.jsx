@@ -9,7 +9,7 @@ export default function NotFound() {
             <div className="error-img">
             <img src={logo} alt="" style={{ width: "75%", height: "100%"}} />
             </div>
-            <Link to={"/"}>
+            <Link to={"/login"}>
                 <div className="btn">Back to Home </div>
             </Link>
         </div>

@@ -4,6 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 // import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 // import PlaceIcon from '@mui/icons-material/Place';
 import './Settings.css'
+import LeftSidebar from '../user/UserDashboard/LeftSidebar/LeftSidebar';
 import Navbar from '../Components/Navbar';
 
 const Settings = () => {
@@ -11,7 +12,9 @@ const Settings = () => {
     <>
     <Navbar/>
     <div className='setting-main'>
-    <div className='navn'></div>
+    <div className='navn'>
+      <LeftSidebar/>
+    </div>
         <div className='setting-cred'>
             <div className='setting-header'>
                 <div className='go-to-dashboard'>
