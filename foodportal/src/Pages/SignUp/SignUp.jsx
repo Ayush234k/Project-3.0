@@ -1,93 +1,134 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import "./SignUp.css";
-import PersonIcon from "@mui/icons-material/Person";
-import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
-import NoEncryptionRoundedIcon from "@mui/icons-material/NoEncryptionRounded";
-import Navbar from "../../Components/Navbar";
-// import Signup from '../Signup/Signup';
-// import Footer from '../../Components/Footer'
-// import chef from '../../assets/Chef.png'
-// import log1 from '../../assets/log1.jpg'
+// import React, { useState } from "react";
+// import { Link } from "react-router-dom";
+// import "./Login.css";
+// import { signup } from "./../auth/helper/index";
 
-const SignUp = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+// const Signup = () => {
+//   const [values, setValues] = useState({
+//     name: "",
+//     email: "",
+//     password: "",
+//     error: "",
+//     success: false,
+//   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:7000/login", { email, password })
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
-  };
+//   const { name, email, password, error, success } = values;
 
-  const [action, setAction] = useState("Login");
+//   const handleChange = (name) => (event) => {
+//     setValues({ ...values, error: false, [name]: event.target.value });
+//   };
 
+//   const onSubmit = (event) => {
+//     event.preventDefault();
+//     setValues({ ...values, error: false });
+//     signup({ name, email, password })
+//       .then((data) => {
+//         if (data.error) {
+//           setValues({ ...values, error: data.error, success: false });
+//         } else {
+//           setValues({
+//             ...values,
+//             name: "",
+//             email: "",
+//             password: "",
+//             error: "",
+//             success: true,
+//           });
+//         }
+//       })
+//       .catch((err) => {
+//         console.log("Error in signup", err);
+//       });
+//   };
+
+//   const signUpForm = () => {
+//     return (
+//       <div className="row">
+//         <div className="col-md-6 offset-sm-3 text-left">
+//           <form>
+//             <div className="form-group">
+//               <label className="text-light">Name</label>
+//               <input
+//                 className="form-control"
+//                 onChange={handleChange("name")}
+//                 type="text"
+//                 value={name}
+//               />
+//             </div>
+//             <div className="form-group">
+//               <label className="text-light">Email</label>
+//               <input
+//                 className="form-control"
+//                 onChange={handleChange("email")}
+//                 type="email"
+//                 value={email}
+//               />
+//             </div>
+//             <div className="form-group">
+//               <label className="text-light">Password</label>
+//               <input
+//                 className="form-control"
+//                 onChange={handleChange("password")}
+//                 type="password"
+//                 value={password}
+//               />
+//             </div>
+//             <button
+//               onClick={onSubmit}
+//               className="btn btn-success btn-block form-control"
+//             >
+//               Submit
+//             </button>
+//           </form>
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   const successMessage = () => {
+//     return (
+//       <div
+//         className="alert alert-success col-md-6 offset-sm-3 text-left"
+//         style={{ display: success ? "" : "none" }}
+//       >
+//         New account was created successfully. Please
+//         <Link to="/signin">Login here</Link>.
+//       </div>
+//     );
+//   };
+
+//   const errorMessage = () => {
+//     return (
+//       <div
+//         className="alert alert-danger col-md-6 offset-sm-3 text-left"
+//         style={{ display: error ? "" : "none" }}
+//       >
+//         {error}
+//       </div>
+//     );
+//   };
+
+//   return (
+//     // <Base title="Sign up page" description="A page for user to sign up!">
+//     //   {successMessage()}
+//     //   {errorMessage()}
+//     //   {signUpForm()}
+//       <p className="text-white text-center">{JSON.stringify(values)}</p>
+//     // </Base>
+//   );
+// };
+
+// export default Signup;
+
+
+import React from 'react'
+
+const Signup = () => {
   return (
-    <>
-    <Navbar/>
-      <div className="login-main">
-        <div className="login-credentials">
-          <div className="login-input">
-            <h1>Create Account</h1>
-            <div className="login-input-2">
-                <label className="email-label" id="required">
-                  Full Name
-                </label>
-                <div className="wrapper">
-                  <PersonIcon sx={{ fontSize: 27 }} className="MR" />
-                  <input
-                    type="text"
-                    placeholder="Enter name"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-              <label id="required">Email</label>
-              <div className="wrapper">
-                <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
-                <input
-                  type="email"
-                  placeholder="Enter email"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <label className="underline" id="required">
-                Password
-              </label>
-              <div className="wrapper">
-                <NoEncryptionRoundedIcon sx={{ fontSize: 27 }} className="MR" />
-                <input
-                  type="password"
-                  placeholder="Enter password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-            </div>
-            <button
-              className='bt'
-              type="submit"
-              onSubmit={handleSubmit}
-            >
-                SignUp
-            </button>
-            <div className="Change">
-                <div>
-                  <p>Don't Have An Account?</p>
-                  <Link 
-                  className="link"
-                  to="/login">Login</Link>
-                </div>
-            </div>
-          </div>
-          <div className="login-image">
-            <div className="image" />
-            {/* <img src={ chef } alt='#'></img> */}
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-export default SignUp;
+    <div>
+      <p>Helllo SIgnup Page</p>
+    </div>
+  )
+}
+
+export default Signup
