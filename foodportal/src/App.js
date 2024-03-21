@@ -2,13 +2,12 @@ import React from "react";
 import Navbar from "./Components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login/Login";
-import AboutUs from "./Pages/About";
+// import AboutUs from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Feedback from "./Pages/Feedback.jsx";
 import NotFound from "./Pages/NotFound";
 import Settings from "./Pages/Settings";
 import Signup from "./Pages/Signup/Signup.jsx";
-import Banner from './Pages/Banner';
 
 import AdminRoutes from "./auth/AdminRoutes.js";
 import PrivateRoutes from "./auth/PrivateRoutes.js";
