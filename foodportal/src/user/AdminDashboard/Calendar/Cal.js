@@ -26,7 +26,7 @@ export default function Calendar() {
           showDaysOutsideCurrentMonth
           fixedWeekNumber={6}
         />
-        <p>Selected day: {getDayOfWeek(selectedDate)}</p>
+        {/* <p>Selected day: {getDayOfWeek(selectedDate)}</p> */}
       </div>
     </LocalizationProvider>
   );

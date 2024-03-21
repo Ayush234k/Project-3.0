@@ -6,34 +6,20 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Cal from "./Cal"; 
+import Cal from "./Cal";
+import Calendar from "./Cal";
 import Notify from "../Cards/Notify";
+//import './Rightpanel.css';
 export default function Rightpanel() {
   return (
-    <Box sx={{ display: "flex" }}>
-      <Drawer
-        sx={{
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: "23%",
-            boxSizing: "border-box",
-            background: "white",
-            color: "black",
-          },
-        }}
-        variant="permanent"
-        anchor="right"
-      >
-        <List sx={{ marginTop: "200px" }}>
-          <ListItem>
-            <Cal />
-          </ListItem>
-          <ListItem sx={{marginTop: "600px"}}>
-            <Notify/>
-          </ListItem>
-          
-        </List>
-      </Drawer>
-    </Box>
+    <div className="RightSide">
+      <div>
+      <h3>Select Date</h3>
+      <Calendar/>
+      </div>
+      <div>
+        <h3>Notice</h3>
+      </div>
+    </div>
   );
 }
