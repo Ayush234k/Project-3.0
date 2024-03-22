@@ -3,7 +3,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import dayjs from 'dayjs';
-
+import CurrentDate from './CurrentDate'
 export default function Calendar() {
   const [selectedDate, setSelectedDate] = useState(dayjs());
 
@@ -26,8 +26,9 @@ export default function Calendar() {
           showDaysOutsideCurrentMonth
           fixedWeekNumber={6}
         />
-        {/* <p>Selected day: {getDayOfWeek(selectedDate)}</p> */}
+        <p>Selected day: {getDayOfWeek(selectedDate)}</p>
       </div>
+      <div><CurrentDate/></div>
     </LocalizationProvider>
   );
 }
