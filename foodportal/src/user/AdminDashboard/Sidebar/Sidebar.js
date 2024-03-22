@@ -8,10 +8,10 @@ const Sidebar = () => {
   return (
     <div className="Sidebar">
       {/* {JSON.stringify(SidebarData)} } */}
-      <div className="logo">
+      {/* <div className="logo"> */}
         <span>Foodportal</span>
-      </div>
-      <div className="menu">
+      {/*  */}
+        <div className="menu">
         {SidebarData.map((item, index) => {
           return (
             <div
