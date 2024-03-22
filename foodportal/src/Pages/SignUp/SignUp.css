@@ -94,8 +94,8 @@
 .login-input p{
     margin-top: 30px;
 }
-.bt{
-    width: 25%;
+/* .btn{
+    max-width: 25px;
     height: 3.2rem;
     border-radius: 7px;
     border: none;
@@ -104,7 +104,7 @@
     color: white;
     text-decoration: none;
     cursor: pointer;
-}
+} */
 .login-image{
     width: 50%;
     height: 100%;

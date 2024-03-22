@@ -8,7 +8,13 @@ import { signup } from "../../auth/index";
 import { Navigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+
 const Signup = () => {
+  const [open, setOpen] = useState(false);
+
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -18,6 +24,17 @@ const Signup = () => {
   });
 
   const { username, email, password, error, success } = values;
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
 
   const handleChange = (username) => (event) => {
     setValues({ ...values, error: false, [username]: event.target.value });
@@ -31,15 +48,15 @@ const Signup = () => {
         if (data.error) {
           setValues({ ...values, error: data.error, success: false });
         } else {
-            setValues({
-              ...values,
-              username: "",
-              email: "",
-              password: "",
-              error: "",
-              success: true,
-            });
-          }
+          setValues({
+            ...values,
+            username: "",
+            email: "",
+            password: "",
+            error: "",
+            success: true,
+          });
+        }
       })
       .catch((err) => {
         console.log("Error in signup!", err);
@@ -49,13 +66,13 @@ const Signup = () => {
   const signUpForm = () => {
     return (
       <>
-      <Navbar/>
+        <Navbar />
         <div className="login-main">
           <div className="login-credentials">
             <div className="login-input">
               <h1>Create Account</h1>
               <div className="login-input-2">
-              <label id="required">Full Name</label>
+                <label id="required">Full Name</label>
                 <div className="wrapper">
                   <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
                   <input
@@ -91,20 +108,52 @@ const Signup = () => {
                   />
                 </div>
               </div>
-              <button
-                className='bt'
-                type="submit"
-                onClick={onSubmit}
-              >
-                Signup
-              </button>
+              <div>
+                <Button
+                  className="btn"
+                  type="submit"
+                  onClick={(e) => {
+                    onSubmit(e);
+                    handleClick(e);
+                  }}
+                  sx={{
+                    maxWidth: "25px",
+                    height: "3.2rem",
+                    borderRadius: "7px",
+                    border: "none",
+                    fontSize: "20px",
+                    backgroundColor: "#7200eb",
+                    color: "white",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    "&:hover": {
+                      backgroundColor: "#5c00b3", // Adjust hover color if needed
+                    },
+                  }}
+                >
+                  Signup
+                </Button>
+                <Snackbar
+                  open={open}
+                  autoHideDuration={6000}
+                  onClose={handleClose}
+                >
+                  <Alert
+                    onClose={handleClose}
+                    severity="success"
+                    variant="filled"
+                    sx={{ width: "100%" }}
+                  >
+                    New account created successfully. Please{" "}
+                    <Link to="/login">Login</Link>here.
+                  </Alert>
+                </Snackbar>
+              </div>
               <div className="Change">
-                  <div>
-                    <p>Already Have An Account?</p>
-                    <Link to='/login'>
-                      Login
-                    </Link>
-                  </div>
+                <div>
+                  <p>Already Have An Account?</p>
+                  <Link to="/login">Login</Link>
+                </div>
               </div>
             </div>
             <div className="login-image">
@@ -113,18 +162,6 @@ const Signup = () => {
           </div>
         </div>
       </>
-    );
-  };
-
-  const successMessage = () => {
-    return (
-      <div
-        className="alert alert-success col-md-6 offset-sm-3 text-left"
-        style={{ display: success ? "" : "none" }}
-      >
-        New account was created successfully. Please
-        <Link to="/signin">Login here</Link>.
-      </div>
     );
   };
 
@@ -141,13 +178,9 @@ const Signup = () => {
 
   return (
     <div>
-      {/* <Base title="Sign in page" description="A page for user to sign in!"> */}
-      {successMessage()}
       {errorMessage()}
       {signUpForm()}
-      {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
     </div>
-    // </Base>
   );
 };
 export default Signup;
