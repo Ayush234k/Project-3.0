@@ -91,7 +91,7 @@ const Login = () => {
         <div className="login-main">
           <div className="login-credentials">
             <div className="login-input">
-              <h1>Login</h1>
+              <h1>Welcome Back</h1>
               <div className="login-input-2">
                 <label id="required">Email</label>
                 <div className="wrapper">
@@ -129,14 +129,32 @@ const Login = () => {
               <div className="Change">
                   <div>
                     <p>Don't Have An Account?</p>
-                    <Link to='/signup'>
+                    <Link 
+                      id="link"
+                      to='/signup'>
                       SignUp
                     </Link>
                   </div>
               </div>
             </div>
             <div className="login-image">
-              <div className="image" />
+              <div className="image">
+                <h2 id="login-highlight">Welcome to</h2><br/>
+                <h1>EcoDine 2.0</h1><br/>
+                <p>
+                Here at EcoDine, we're on a mission to revolutionize the way we approach meals in our hostel mess, making every bite count towards a more sustainable future. With just a few clicks, you can help us reduce food wastage by selecting the days you plan to skip a meal. It's simple, it's effective, and it's a step towards a healthier planet.
+                <br/><br/>
+
+                <p id="login-highlight">New to EcoDine?</p>Sign up today and join our community of eco-conscious diners. Together, we can make a difference, one meal at a time.
+                <br/><br/>
+
+                <p id="login-highlight">Already a member?</p>Log in to manage your meal plans and continue making impactful choices.
+                <br/><br/>
+                <p id="login-highlight">"Saving Food, Nurturing Futures"</p>
+                <br/>
+                Thank you for being a part of our journey towards sustainability. Let's make every meal matter! 
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -86,7 +86,7 @@
   select{
     width: 90%;
     height: 60px;
-    border-radius: 7px;
+    border-radius: 10px;
     font-size: 20px;
     padding-left: 10px;
     color: #ffffff;
@@ -152,7 +152,7 @@
   .feed-btn{
     width: 90%;
     height: 55px;
-    border-radius: 7px;
+    border-radius: 10px;
     background: #7200eb;
     display: flex;
     justify-content: center;
