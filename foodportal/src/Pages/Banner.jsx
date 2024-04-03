@@ -33,7 +33,7 @@ function Banner(){
         </div>
         <div className='Contain-0'>
             <div className="logo">
-                <h1>FOOD PORTAL</h1>
+                <h1>EcoDine 2.0</h1>
                 <p>By KIIT University</p>
             </div>
             <div className='portal-info'>

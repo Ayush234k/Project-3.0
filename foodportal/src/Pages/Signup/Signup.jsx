@@ -67,13 +67,13 @@ const Signup = () => {
     return (
       <>
         <Navbar />
-        <div className="login-main">
-          <div className="login-credentials">
-            <div className="login-input">
-              <h1>Create Account</h1>
-              <div className="login-input-2">
-                <label id="required">Full Name</label>
-                <div className="wrapper">
+        <div className="signup-main">
+          <div className="signup-credentials">
+            <div className="signup-input">
+              <h1>Create an account</h1>
+              <div className="signup-input-2">
+                <label id="signup-required">Full Name</label>
+                <div className="signup-wrapper">
                   <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
                   <input
                     value={username}
@@ -82,8 +82,8 @@ const Signup = () => {
                     placeholder="Enter your username"
                   />
                 </div>
-                <label id="required">Email</label>
-                <div className="wrapper">
+                <label id="signup-required">Email</label>
+                <div className="signup-wrapper">
                   <EmailRoundedIcon sx={{ fontSize: 27 }} className="MR" />
                   <input
                     value={email}
@@ -92,10 +92,10 @@ const Signup = () => {
                     placeholder="Enter email"
                   />
                 </div>
-                <label className="underline" id="required">
+                <label className="signup-underline" id="signup-required">
                   Password
                 </label>
-                <div className="wrapper">
+                <div className="signup-wrapper">
                   <NoEncryptionRoundedIcon
                     sx={{ fontSize: 27 }}
                     className="MR"
@@ -110,7 +110,7 @@ const Signup = () => {
               </div>
               <div>
                 <Button
-                  className="btn"
+                  className="signup-btn"
                   type="submit"
                   onClick={(e) => {
                     onSubmit(e);
@@ -145,11 +145,13 @@ const Signup = () => {
                     sx={{ width: "100%" }}
                   >
                     New account created successfully. Please{" "}
-                    <Link to="/login">Login</Link>here.
+                    <Link 
+                      id="link"
+                      to="/login">Login</Link>here.
                   </Alert>
                 </Snackbar>
               </div>
-              <div className="Change">
+              <div className="signup-Change">
                 <div>
                   <p>Already Have An Account?</p>
                   <Link to="/login">Login</Link>
@@ -157,7 +159,23 @@ const Signup = () => {
               </div>
             </div>
             <div className="login-image">
-              <div className="image" />
+            <div className="image">
+                <h2 id="login-highlight">Welcome to</h2><br/>
+                <h1>EcoDine 2.0</h1><br/>
+                <p>
+                Here at EcoDine, we're on a mission to revolutionize the way we approach meals in our hostel mess, making every bite count towards a more sustainable future. With just a few clicks, you can help us reduce food wastage by selecting the days you plan to skip a meal. It's simple, it's effective, and it's a step towards a healthier planet.
+                <br/><br/>
+
+                <p id="login-highlight">New to EcoDine?</p>Sign up today and join our community of eco-conscious diners. Together, we can make a difference, one meal at a time.
+                <br/><br/>
+
+                <p id="login-highlight">Already a member?</p>Log in to manage your meal plans and continue making impactful choices.
+                <br/><br/>
+                <p id="login-highlight">"Saving Food, Nurturing Futures"</p>
+                <br/>
+                Thank you for being a part of our journey towards sustainability. Let's make every meal matter! 
+                </p>
+              </div>
             </div>
           </div>
         </div>
