@@ -140,10 +140,11 @@ const deleteUserById = asyncHandler(async (req, res) => {
   }
 });
 
-const getUserById = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id).select("-password");
+const getUserById = asyncHandler(async (req, res, next) => {
+  const user = await User.findById(req.params.userId).select("-password");
   if (user) {
-    res.json(user);
+    req.profile = user;
+    next();
   } else {
     res.status(404);
     throw new Error("User not found!");
@@ -151,7 +152,7 @@ const getUserById = asyncHandler(async (req, res) => {
 });
 
 const updateUserById = asyncHandler(async(req, res) => {
-    const user = await User.findById(req.params.id);
+    const user = await User.findById(req.params.userId);
     if (user) {
         user.username = req.body.username || user.username;
         user.email = req.body.email || user.email;

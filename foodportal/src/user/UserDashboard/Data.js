@@ -51,7 +51,7 @@ export const CardsData = [
       background: "#397E62",
       color: "white"
     },
-    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+    body: "Idli/Uttapam, Sambar, Chutney, Bread, Butter, Jam, Coffee",
   },
   {
     title: "Lunch",
@@ -59,7 +59,7 @@ export const CardsData = [
       background: "#397E62", 
       color: "white"
     },
-    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+    body: "Paneer Kofta Curry, Mixed Boiled Vegetable, Egg Curry, Dal, Rice, Roti, Plain Dahi",
   },
   {
     title: "Snacks",
@@ -67,7 +67,7 @@ export const CardsData = [
       background: "#397E62", 
       color: "white"
     },
-    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+    body: "Maggi, Tea",
   },
   {
     title: "Dinner",
@@ -75,7 +75,7 @@ export const CardsData = [
       background: "#397E62", 
       color: "white"
     },
-    body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+    body: "Paneer Aloo Chatpata, Mixed Boiled Vegetable, Dal, Rice, Roti, Rasgula",
   },
 
 ];
